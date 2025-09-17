@@ -1,0 +1,151 @@
+/* --- GLOBAL STYLES --- */
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --off-white: #f4f4f4;
+  --grey: #a3a3a3;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Satoshi', sans-serif; font-weight: 400; background-color: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+a { text-decoration: none; color: inherit; }
+h1, h2, h3, h4, h5, h6 { font-weight: 700; }
+p { line-height: 1.7; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 2rem; }
+
+/* --- APP LAYOUT --- */
+.App { display: flex; flex-direction: column; min-height: 100vh; }
+main { flex: 1; padding: 4rem 0; }
+
+/* --- HEADER/NAVBAR --- */
+.header { background-color: var(--white); border-bottom: 1px solid var(--off-white); padding: 1.5rem 0; position: sticky; top: 0; z-index: 1000; }
+.navbar { display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { font-weight: 700; font-size: 1.5rem; }
+.nav-menu { display: flex; list-style: none; gap: 2rem; font-weight: 500; }
+.nav-menu a { transition: color 0.2s ease-in-out; }
+.nav-menu a:hover { color: var(--grey); }
+.nav-auth { display: flex; align-items: center; gap: 1rem; }
+.nav-button { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 500; cursor: pointer; border: none; transition: all 0.2s ease-in-out; }
+.login-button { background: transparent; color: var(--black); }
+.signup-button { background-color: var(--black); color: var(--white); }
+.nav-button:hover { opacity: 0.8; }
+
+/* --- FOOTER --- */
+.footer { background-color: var(--black); color: var(--grey); padding: 2rem 0; }
+.footer-content { display: flex; justify-content: space-between; align-items: center; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a { transition: color 0.2s ease-in-out; }
+.footer-links a:hover { color: var(--white); }
+
+/* --- HOMEPAGE --- */
+.hero { text-align: center; padding: 6rem 0; }
+.hero-title { font-size: 5rem; font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; }
+.hero-highlight { background: linear-gradient(to right, #333, #000); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero-subtitle { font-size: 1.25rem; font-weight: 400; max-width: 600px; margin: 0 auto 2.5rem; color: var(--grey); }
+.hero-cta { font-size: 1.1rem; font-weight: 500; background-color: var(--black); color: var(--white); padding: 1rem 2rem; border-radius: 8px; transition: transform 0.2s ease-in-out; display: inline-block; }
+.hero-cta:hover { transform: scale(1.05); }
+.info-section { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; padding: 4rem 0; }
+.info-card { background-color: var(--off-white); padding: 2.5rem; border-radius: 12px; }
+.info-card h2 { font-size: 2rem; margin-bottom: 1rem; }
+.info-card p { color: var(--grey); margin-bottom: 2rem; }
+.info-link { font-weight: 500; text-decoration: underline; }
+
+/* --- GENERIC PAGE HEADER --- */
+.page-header { text-align: center; margin-bottom: 4rem; }
+.page-header h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+.page-header p { font-size: 1.2rem; color: var(--grey); max-width: 500px; margin: 0 auto; }
+
+/* --- CAREERS TABLE (FINAL & FIXED) --- */
+.table-container { overflow-x: auto; } /* Horizontal scroll on very small screens */
+.career-table { width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 1rem; }
+.career-table th, .career-table td { padding: 1.25rem 1rem; text-align: left; border-bottom: 1px solid #e5e5e5; }
+.career-table th { font-weight: 500; color: var(--grey); }
+.career-table td { vertical-align: middle; } /* YEH BUTTON KO VERTICALLY CENTER KARTA HAI */
+.description-header { width: 50%; }
+.table-link { 
+    font-weight: 500; 
+    text-decoration: none; 
+    background-color: var(--black); 
+    color: var(--white) !important; /* YEH BUTTON KE TEXT COLOUR KO FIX KARTA HAI */
+    padding: 0.5rem 1rem; 
+    border-radius: 6px; 
+    transition: opacity 0.2s; 
+    display: inline-block; 
+    white-space: nowrap; /* YEH BUTTON KE TEXT KO EK LINE MEIN RAKHTA HAI */
+    border: none;
+}
+.table-link:hover { opacity: 0.8; color: var(--white) !important; }
+
+/* --- AUTH FORMS & OTHERS --- */
+.auth-page { max-width: 450px; margin: 0 auto; text-align: center; }
+.auth-page h2 { font-size: 3rem; margin-bottom: 1rem; }
+.auth-page p { color: var(--grey); margin-bottom: 2.5rem; }
+.auth-form .form-group { margin-bottom: 1.5rem; text-align: left; }
+.auth-form label { display: block; font-weight: 500; margin-bottom: 0.5rem; }
+.auth-form input, .auth-form textarea { width: 100%; padding: 1rem; border: 1px solid #e5e5e5; border-radius: 8px; font-size: 1rem; font-family: 'Satoshi', sans-serif; resize: vertical; }
+.auth-form .btn-submit { width: 100%; padding: 1rem; border-radius: 8px; font-weight: 500; font-size: 1.1rem; cursor: pointer; border: none; background-color: var(--black); color: var(--white); transition: all 0.2s ease-in-out; }
+.auth-form .btn-submit:hover { opacity: 0.8; }
+.auth-switch { margin-top: 2rem; color: var(--grey); }
+.auth-switch a { font-weight: 500; color: var(--black); text-decoration: underline; }
+.errors { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px; }
+
+/* --- QUIZ & DETAILS STYLES --- */
+.quiz-container { max-width: 800px; margin: 2rem auto; background-color: var(--off-white); border-radius: 12px; padding: 3rem; min-height: 400px; display: flex; flex-direction: column; justify-content: center; }
+.result-section, .question-section { text-align: center; }
+.question-count { margin-bottom: 1rem; font-size: 1.2rem; font-weight: 500; color: var(--grey); }
+.question-text { font-size: 2rem; font-weight: 700; margin-bottom: 2.5rem; }
+.answer-options { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.option-button { display: block; width: 100%; padding: 1.5rem; border-radius: 8px; font-weight: 500; font-size: 1.1rem; cursor: pointer; border: 1px solid #e5e5e5; background-color: var(--white); color: var(--black); text-align: left; transition: all 0.2s ease-in-out; }
+.option-button:hover { background-color: var(--black); color: var(--white); border-color: var(--black); }
+.suggested-career { font-size: 3.5rem; font-weight: 700; margin-bottom: 1rem; }
+.result-description { font-size: 1.1rem; color: var(--grey); max-width: 500px; margin: 0 auto 2rem; }
+.btn-restart { font-size: 1.1rem; font-weight: 500; background-color: transparent; color: var(--black); padding: 1rem 2rem; border-radius: 8px; border: 1px solid var(--black); cursor: pointer; transition: all 0.2s ease-in-out; text-decoration: none; display: inline-block; }
+.btn-restart:hover { background-color: var(--black); color: var(--white); }
+.career-details-page { max-width: 900px; }
+.career-title { font-size: 4rem; text-align: center; margin-bottom: 1rem; }
+.career-description { font-size: 1.2rem; text-align: center; color: var(--grey); margin-bottom: 4rem; }
+.details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
+.detail-card { background-color: var(--off-white); padding: 2rem; border-radius: 12px; }
+.detail-card h3 { font-size: 1.2rem; color: var(--grey); margin-bottom: 0.5rem; }
+.detail-card p { font-size: 1.5rem; font-weight: 700; }
+.detail-card .salary { color: #16a34a; }
+.skills-section h3 { font-size: 2rem; margin-bottom: 1.5rem; }
+.skills-list { display: flex; flex-wrap: wrap; gap: 1rem; }
+.skill-tag { background-color: var(--off-white); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 500; }
+.profile-details { max-width: 600px; margin: 2rem auto; background-color: var(--off-white); border-radius: 12px; padding: 2rem; border: 1px solid #e5e5e5; }
+.detail-item { display: flex; justify-content: space-between; padding: 1.5rem 0; border-bottom: 1px solid #e5e5e5; }
+.detail-item:last-child { border-bottom: none; }
+.detail-label { font-weight: 500; color: var(--grey); }
+.detail-value { font-weight: 700; font-size: 1.1rem; }
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    .nav-menu { display: none; }
+}
+@media (max-width: 768px) {
+    .container { padding: 0 1.5rem; }
+    .hero-title { font-size: 3.5rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+    .info-section { grid-template-columns: 1fr; }
+    .page-header h1 { font-size: 2.5rem; }
+    .footer-content { flex-direction: column; gap: 1rem; }
+    .details-grid { grid-template-columns: 1fr; }
+    .career-title { font-size: 3rem; }
+    .quiz-container { padding: 2rem; }
+    .question-text { font-size: 1.5rem; }
+    
+    .career-table thead { display: none; }
+    .career-table, .career-table tbody, .career-table tr, .career-table td { display: block; width: 100%; }
+    .career-table tr { margin-bottom: 1.5rem; border: 1px solid #e5e5e5; border-radius: 8px; padding: 1rem; }
+    .career-table td { text-align: right; padding-left: 50%; position: relative; border-bottom: none; padding-bottom: 0.5rem; padding-top: 0.5rem; }
+    .career-table td:last-child { padding-bottom: 0; }
+    .career-table td::before { content: attr(data-label); position: absolute; left: 1rem; width: 45%; padding-right: 1rem; text-align: left; font-weight: bold; color: var(--black); }
+    .career-table td.action-cell { display: flex; justify-content: flex-end; align-items: center; } /* Mobile view alignment fix */
+}
+@media (max-width: 480px) {
+    .container { padding: 0 1rem; }
+    .hero-title { font-size: 2.5rem; }
+    .hero { padding: 4rem 0; }
+    .nav-auth .login-button { display: none; }
+    .auth-page h2 { font-size: 2rem; }
+    .career-title { font-size: 2.5rem; }
+}

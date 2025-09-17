@@ -1,0 +1,74 @@
+/* --- ADMIN PANEL SPECIFIC STYLES --- */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f9fafb; /* Admin panel ke liye halka grey background */
+}
+.admin-panel {
+    flex: 1; /* Yeh main content area ko grow karega */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 1rem;
+}
+.admin-header h1 {
+    font-size: 2rem;
+}
+.admin-header-buttons {
+    display: flex;
+    gap: 1rem;
+}
+.admin-button {
+    background-color: var(--black);
+    color: var(--white);
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+.admin-button:hover {
+    opacity: 0.8;
+}
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+.admin-table th, .admin-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+}
+.admin-table th {
+    color: var(--grey);
+}
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+.admin-table .actions a {
+    margin-right: 10px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.edit-link { color: #2563eb; }
+.delete-link { color: #dc2626; }
+
+.admin-footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    color: var(--grey);
+    font-size: 0.9rem;
+}
