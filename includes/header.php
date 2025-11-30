@@ -8,7 +8,7 @@ require_once 'db.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareerCounsel</title>
+    <title>AiSpire</title>
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -16,7 +16,7 @@ require_once 'db.php';
     <div class="App">
         <header class="header">
             <nav class="navbar container">
-                <a href="index.php" class="nav-logo">CareerCounsel</a>
+                <a href="index.php" class="nav-logo">AiSpire</a>
                 <ul class="nav-menu">
                     <li><a href="careers.php">Careers</a></li>
                     <li><a href="assessments.php">Assessments</a></li>

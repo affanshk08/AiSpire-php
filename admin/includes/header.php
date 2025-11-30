@@ -23,8 +23,6 @@ if (!isset($_SESSION['is_admin'])) {
         <div class="admin-header">
             <h1>Manage Careers</h1>
             <div class="admin-header-buttons">
-                <a href="index.php" class="admin-button">Dashboard</a>
-                <a href="add-career.php" class="admin-button">Add New Career</a>
                 <a href="logout.php" class="admin-button" style="background-color: #dc2626;">Logout</a>
             </div>
         </div>

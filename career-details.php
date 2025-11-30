@@ -66,15 +66,56 @@ include 'includes/footer.php';
 <style>
 /* You can copy the styles for this page from your MERN project's CareerDetails.css */
 /* For convenience, here are the styles: */
-.career-details-page { max-width: 900px; }
-.career-title { font-size: 4rem; text-align: center; margin-bottom: 1rem; }
-.career-description { font-size: 1.2rem; text-align: center; color: var(--grey); margin-bottom: 4rem; }
-.details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 3rem; }
-.detail-card { background-color: var(--off-white); padding: 2rem; border-radius: 12px; }
-.detail-card h3 { font-size: 1.2rem; color: var(--grey); margin-bottom: 0.5rem; }
-.detail-card p { font-size: 1.5rem; font-weight: 700; }
-.detail-card .salary { color: #16a34a; }
-.skills-section h3 { font-size: 2rem; margin-bottom: 1.5rem; }
-.skills-list { display: flex; flex-wrap: wrap; gap: 1rem; }
-.skill-tag { background-color: var(--off-white); padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 500; }
+.career-details-page { 
+    max-width: 900px; 
+}
+.career-title {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.career-description {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--grey);
+    margin-bottom: 4rem;
+}
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+.detail-card {
+    background-color: var(--off-white);
+    padding: 2rem;
+    border-radius: 12px;
+}
+.detail-card h3 {
+    font-size: 1.2rem;
+    color: var(--grey);
+    margin-bottom: 0.5rem;
+}
+.detail-card p {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.detail-card .salary {
+    color: #16a34a;
+}
+.skills-section h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.skill-tag {
+    background-color: var(--off-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
 </style>
