@@ -20,10 +20,17 @@ require_once 'db.php';
                 <ul class="nav-menu">
                     <li><a href="careers.php">Careers</a></li>
                     <li><a href="assessments.php">Assessments</a></li>
+                    <?php if (isset($_SESSION['user_id']) || isset($_SESSION['is_admin'])): ?>
+                        <li><a href="career-inquiry.php">Inquiry</a></li>
+                        <li><a href="book-appointment.php">Book Appointment</a></li>
+                    <?php endif; ?>
                     <li><a href="about.php">About</a></li>
                 </ul>
                 <div class="nav-auth">
-                    <?php if (isset($_SESSION['user_id'])): ?>
+                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true): ?>
+                        <a href="admin/index.php" class="nav-button admin-button">Admin Panel</a>
+                        <a href="admin/logout.php" class="nav-button signup-button">Logout</a>
+                    <?php elseif (isset($_SESSION['user_id'])): ?>
                         <a href="profile.php" class="nav-button login-button">Profile</a>
                         <a href="logout.php" class="nav-button signup-button">Logout</a>
                     <?php else: ?>

@@ -22,43 +22,29 @@ $careers_result = $conn->query("SELECT * FROM careers");
         </p>
     </div>
 
-    <div class="table-container">
-        <table class="career-table">
-            <thead>
-                <tr>
-                    <th>Career Title</th>
-                    <th class="description-header">Description</th>
-                    <th>Average Salary (INR)</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                if ($careers_result->num_rows > 0):
-                    while($career = $careers_result->fetch_assoc()): 
-                ?>
-                    <tr>
-                        <td data-label="Career Title"><?php echo htmlspecialchars($career['title']); ?></td>
-                        <td data-label="Description"><?php echo htmlspecialchars($career['description']); ?></td>
-                        <td data-label="Average Salary">₹<?php echo number_format($career['averageSalary']); ?></td>
-                        <td data-label="Action" class="action-cell">
-                            <a href="career-details.php?id=<?php echo $career['id']; ?>" class="table-link">
-                                View Details
-                            </a>
-                        </td>
-                    </tr>
-                <?php 
-                    endwhile; 
-                else:
-                ?>
-                    <tr>
-                        <td colspan="4">No careers found in the database yet.</td>
-                    </tr>
-                <?php 
-                endif;
-                ?>
-            </tbody>
-        </table>
+    <div class="careers-grid">
+        <?php 
+        if ($careers_result->num_rows > 0):
+            while($career = $careers_result->fetch_assoc()): 
+        ?>
+            <div class="career-card">
+                <h3 class="career-card-title"><?php echo htmlspecialchars($career['title']); ?></h3>
+                <p class="career-card-description"><?php echo htmlspecialchars($career['description']); ?></p>
+                <div class="career-card-salary">₹<?php echo number_format($career['averageSalary']); ?>/yr</div>
+                <a href="career-details.php?id=<?php echo $career['id']; ?>" class="career-card-link">
+                    View Details
+                </a>
+            </div>
+        <?php 
+            endwhile; 
+        else:
+        ?>
+            <div style="grid-column: 1 / -1; text-align: center; padding: 3rem; color: var(--text-secondary);">
+                <p style="font-size: 1.2rem;">No careers found in the database yet.</p>
+            </div>
+        <?php 
+        endif;
+        ?>
     </div>
 </div>
 

@@ -43,13 +43,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<div class="admin-header">
+<div class="admin-page-header">
     <h1>Edit Career</h1>
     <a href="index.php" class="admin-button">Back to Dashboard</a>
 </div>
 
 <?php if (!empty($errors)): ?>
-    <?php endif; ?>
+    <div class="errors">
+        <?php foreach ($errors as $error): ?>
+            <p><?php echo htmlspecialchars($error); ?></p>
+        <?php endforeach; ?>
+    </div>
+<?php endif; ?>
 
 <form method="POST" action="edit-career.php?id=<?php echo $career_id; ?>" class="auth-form">
     <div class="form-group"><label>Title</label><input type="text" name="title" value="<?php echo htmlspecialchars($career['title']); ?>" required></div>

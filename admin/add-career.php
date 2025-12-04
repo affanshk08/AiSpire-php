@@ -33,14 +33,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<div class="admin-header">
+<div class="admin-page-header">
     <h1>Add New Career</h1>
     <a href="index.php" class="admin-button">Back to Dashboard</a>
 </div>
 
 <?php if (!empty($errors)): ?>
-    <div class="errors" style="background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; padding: 1rem; margin-bottom: 1.5rem; border-radius: 8px;">
-        <?php foreach ($errors as $error) echo "<p>$error</p>"; ?>
+    <div class="errors">
+        <?php foreach ($errors as $error): ?>
+            <p><?php echo htmlspecialchars($error); ?></p>
+        <?php endforeach; ?>
     </div>
 <?php endif; ?>
 

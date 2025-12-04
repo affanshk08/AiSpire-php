@@ -51,6 +51,15 @@ if ($result->num_rows == 1):
             <?php endforeach; ?>
         </div>
     </div>
+
+    <div class="career-actions">
+        <a href="career-inquiry.php?career_id=<?php echo $career['id']; ?>" class="career-action-btn inquiry-btn">
+            Ask a Question
+        </a>
+        <a href="book-appointment.php" class="career-action-btn appointment-btn">
+            Book Counselling
+        </a>
+    </div>
 </div>
 
 <?php
@@ -117,5 +126,75 @@ include 'includes/footer.php';
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-weight: 500;
+}
+
+.career-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.career-action-btn {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.career-action-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.career-action-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.inquiry-btn {
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--blue-accent) 100%);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.inquiry-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(37, 99, 235, 0.6);
+}
+
+.appointment-btn {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--blue-accent);
+}
+
+.appointment-btn:hover {
+    background: rgba(37, 99, 235, 0.1);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .career-actions {
+        flex-direction: column;
+    }
+    
+    .career-action-btn {
+        width: 100%;
+    }
 }
 </style>

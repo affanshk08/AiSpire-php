@@ -20,9 +20,11 @@ if (!isset($_SESSION['is_admin'])) {
 </head>
 <body>
     <div class="admin-panel container">
-        <div class="admin-header">
-            <h1>Manage Careers</h1>
-            <div class="admin-header-buttons">
+        <div class="admin-nav-header">
+            <div class="admin-nav-buttons">
+                <a href="index.php" class="admin-button">Dashboard</a>
+                <a href="manage-users.php" class="admin-button">Users</a>
+                <a href="manage-appointments.php" class="admin-button">Appointments</a>
                 <a href="logout.php" class="admin-button" style="background-color: #dc2626;">Logout</a>
             </div>
         </div>

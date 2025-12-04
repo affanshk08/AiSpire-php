@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($password)) { $errors[] = "Password is required."; }
 
     if (empty($errors)) {
-        $stmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ?");
+        $stmt = $conn->prepare("SELECT id, name, password, is_admin FROM users WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
@@ -24,6 +24,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Password is correct, set session variables
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['user_name'] = $user['name'];
+                
+                // Check if user is an admin
+                if (isset($user['is_admin']) && $user['is_admin'] == 1) {
+                    $_SESSION['is_admin'] = true;
+                    $_SESSION['admin_id'] = $user['id'];
+                    $_SESSION['admin_name'] = $user['name'];
+                }
+                
                 header("Location: careers.php");
                 exit();
             } else {
